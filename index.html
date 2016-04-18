@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" >
+<!-- manifest="cache.appcache" -->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+		<title>Minerva Preso</title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<meta name="description" content="A framework for easily creating Web apps with Minerva">
+		<meta name="author" content="Josh Knutson,Casey Vikander">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+		td.vtop{vertical-align: top;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Rest Level 3</h1>
+					<h3>Creating more connections</h3>
+				</section>
+				<section>
+					<h3>Josh Knutson</h3>
+					<ul>
+						<li>Software Developer 3</li>
+						<li>@ Imagtrend for 8+ years</li>
+						<li>Working in CF, JS, CSS, and some .NET</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Casey Vikander</h3>
+					<ul>
+						<li>Commonly miss spelled</li>
+					</ul>
+				</section>
+				<section class="middle formula">
+					<p>
+						Questions?
+					</p>
+				</section>
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		// Check if new appcache is available, load it, and reload page.
+		  if (window.applicationCache) {
+			window.applicationCache.addEventListener('updateready', function(e) {
+			  if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+				  window.applicationCache.swapCache();
+				if (confirm('A new version of this site is available. Load it?')) {
+				  window.location.reload();
+				}
+			  }
+			}, false);
+		  }
+		</script>
+	</body>
+</html>
